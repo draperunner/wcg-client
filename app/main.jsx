@@ -1,6 +1,4 @@
-import React from 'react';
 import { render } from 'react-dom';
+import routes from './routes';
 
-const App = () => <p> Hello React!</p>;
-
-render(<App />, document.getElementById('app'));
+render(routes, document.getElementById('app'));

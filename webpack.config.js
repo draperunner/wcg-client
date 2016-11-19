@@ -17,4 +17,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    root: path.resolve('app'),
+    extensions: ['', '.js', '.jsx', '.scss'],
+    modulesDirectories: ['node_modules'],
+  },
 };
