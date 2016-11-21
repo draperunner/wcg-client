@@ -2,7 +2,7 @@ import React from 'react';
 
 const App = props => (
   <div>
-    <p>Its an app!</p>
+    <h1>Abakus vs Online</h1>
     { props.children }
   </div>
 );
