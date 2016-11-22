@@ -9,6 +9,6 @@ export default
   <Router history={browserHistory}>
     <Route path="/" component={AppContainer}>
       <IndexRoute component={ChallengeContainer} />
-      <Route path="/total" component={TotalPointsContainer} />
+      <Route path="total" component={TotalPointsContainer} />
     </Route>
   </Router>;

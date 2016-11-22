@@ -1,0 +1,11 @@
+#navbar > ul {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar li {
+  float: left;
+  margin-right: 20px;
+}

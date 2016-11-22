@@ -27,7 +27,7 @@ class ChallengeContainer extends React.Component {
   render() {
     return (
       <div>
-        <BarChart data={this.state.scores} />;
+        <BarChart data={this.state.scores} />
       </div>);
   }
 

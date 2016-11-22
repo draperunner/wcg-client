@@ -39,7 +39,7 @@ class TotalPointsContainer extends React.Component {
   render() {
     return (
       <div>
-        <BarChart data={[this.state.abakusPoints, this.state.onlinePoints]} />;
+        <BarChart data={[this.state.abakusPoints, this.state.onlinePoints]} />
       </div>);
   }
 
