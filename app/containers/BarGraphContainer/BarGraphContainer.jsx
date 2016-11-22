@@ -37,7 +37,10 @@ class BarGraphContainer extends React.Component {
   }
 
   render() {
-    return <BarChart data={[this.state.abakusPoints, this.state.onlinePoints]} />;
+    return (
+      <div>
+        <BarChart data={[this.state.abakusPoints, this.state.onlinePoints]} />;
+      </div>);
   }
 
 }

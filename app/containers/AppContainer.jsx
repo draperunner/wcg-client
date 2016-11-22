@@ -1,7 +1,7 @@
 import React from 'react';
 
 const App = props => (
-  <div>
+  <div className="container">
     <h1>Abakus vs Online</h1>
     { props.children }
   </div>

@@ -18,7 +18,9 @@ const BarChart = (props) => {
     }],
   };
 
-  const options = {};
+  const options = {
+    responsive: true,
+  };
 
   return <Bar data={data} options={options} />;
 };
@@ -28,6 +30,5 @@ BarChart.propTypes = {
     React.PropTypes.number,
   ),
 };
-
 
 export default BarChart;
