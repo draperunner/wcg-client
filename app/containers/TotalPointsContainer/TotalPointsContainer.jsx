@@ -1,7 +1,7 @@
 import React from 'react';
 import BarChart from '../../components/BarChart/BarChart';
 
-class BarGraphContainer extends React.Component {
+class TotalPointsContainer extends React.Component {
 
   constructor() {
     super();
@@ -45,4 +45,4 @@ class BarGraphContainer extends React.Component {
 
 }
 
-export default BarGraphContainer;
+export default TotalPointsContainer;
