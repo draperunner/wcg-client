@@ -1,3 +1,6 @@
 node_modules
 *.log
 app/bundle.js
+*.dist.js
+*.sh
+*.tar.gz
