@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --content-base app",
-    "build": "webpack -p --progress && babel server.js -o server.dist.js",
+    "build": "export NODE_ENV=production && webpack -p --progress && babel server.js -o server.dist.js",
     "prod": "npm run build && node server.dist.js"
   },
   "author": "",

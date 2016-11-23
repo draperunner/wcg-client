@@ -1,6 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
 
-module.exports = {
+const base = {
   entry: {
     app: ['./app/main.jsx'],
   },
@@ -26,4 +27,15 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.scss'],
     modulesDirectories: ['node_modules'],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+    }),
+  ],
 };
+
+if (process.env.NODE_ENV === 'production') {
+  base.plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
+
+module.exports = base;
