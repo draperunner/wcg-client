@@ -8,4 +8,11 @@ body {
 .container {
   width: 60%;
   margin: auto;
+  margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 90%;
+  }
 }
