@@ -1,11 +1,11 @@
 import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import { Bar, defaults } from 'react-chartjs-2';
 
 const BarChart = (props) => {
+  defaults.global.legend.display = false;
   const data = {
     labels: ['Abakus', 'Online'],
     datasets: [{
-      label: 'Points',
       data: props.data || [19, 12],
       backgroundColor: [
         '#b1281c',
