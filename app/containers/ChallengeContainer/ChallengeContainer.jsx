@@ -13,7 +13,7 @@ class ChallengeContainer extends React.Component {
 
   fetchPoints() {
     // Fetch Abakus' points
-    fetch('http://wcg-api.byrkje.land/challenges/8183').then(response => response.json())
+    fetch('https://wcg-api.byrkje.land/challenges/8183').then(response => response.json())
     .then((parsedResponse) => {
       this.setState({
         scores: parsedResponse.teamChallenge.scoreboard.map(item => parseInt(item.score, 10)),

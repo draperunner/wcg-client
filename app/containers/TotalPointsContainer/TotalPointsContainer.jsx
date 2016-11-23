@@ -14,7 +14,7 @@ class TotalPointsContainer extends React.Component {
 
   fetchPoints() {
     // Fetch Abakus' points
-    fetch('http://wcg-api.byrkje.land/teams/2TXCT2Z972').then(response => response.json())
+    fetch('https://wcg-api.byrkje.land/teams/2TXCT2Z972').then(response => response.json())
     .then((parsedResponse) => {
       this.setState({
         abakusPoints: parseInt(parsedResponse.teamStats.statisticsTotals.points, 10),
@@ -25,7 +25,7 @@ class TotalPointsContainer extends React.Component {
     });
 
     // Fetch Online's points
-    fetch('http://wcg-api.byrkje.land/teams/3KWRNGFL72').then(response => response.json())
+    fetch('https://wcg-api.byrkje.land/teams/3KWRNGFL72').then(response => response.json())
     .then((parsedResponse) => {
       this.setState({
         onlinePoints: parseInt(parsedResponse.teamStats.statisticsTotals.points, 10),
