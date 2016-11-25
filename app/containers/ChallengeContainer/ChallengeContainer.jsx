@@ -15,8 +15,11 @@ class ChallengeContainer extends React.Component {
     // Fetch Abakus' points
     fetch('https://wcg-api.byrkje.land/challenges/8183').then(response => response.json())
     .then((parsedResponse) => {
+      const teams = parsedResponse.teamChallenge.scoreboard;
+      const abakusScore = parseInt(teams.filter(t => t.teamId === '2TXCT2Z972')[0].score, 10);
+      const onlineScore = parseInt(teams.filter(t => t.teamId === '3KWRNGFL72')[0].score, 10);
       this.setState({
-        scores: parsedResponse.teamChallenge.scoreboard.map(item => parseInt(item.score, 10)),
+        scores: [abakusScore, onlineScore],
       });
     })
     .catch((err) => {
