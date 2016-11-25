@@ -20,6 +20,10 @@ const base = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.svg$/,
+        loader: 'babel!svg-react-loader',
+      },
     ],
   },
   resolve: {
