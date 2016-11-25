@@ -36,6 +36,9 @@ const base = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
 if (process.env.NODE_ENV === 'production') {
