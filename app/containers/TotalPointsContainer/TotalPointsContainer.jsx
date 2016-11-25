@@ -14,26 +14,23 @@ class TotalPointsContainer extends React.Component {
 
   fetchPoints() {
     // Fetch Abakus' points
-    fetch('https://wcg-api.byrkje.land/teams/2TXCT2Z972').then(response => response.json())
-    .then((parsedResponse) => {
-      this.setState({
-        abakusPoints: parseInt(parsedResponse.teamStats.statisticsTotals.points, 10),
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    const fetchAbakus = () => fetch('https://wcg-api.byrkje.land/teams/2TXCT2Z972').then(res => res.json());
 
     // Fetch Online's points
-    fetch('https://wcg-api.byrkje.land/teams/3KWRNGFL72').then(response => response.json())
-    .then((parsedResponse) => {
-      this.setState({
-        onlinePoints: parseInt(parsedResponse.teamStats.statisticsTotals.points, 10),
+    const fetchOnline = () => fetch('https://wcg-api.byrkje.land/teams/3KWRNGFL72').then(res => res.json());
+
+    Promise.all([fetchAbakus(), fetchOnline()])
+      .then((responses) => {
+        const abakus = responses.filter(r => r.teamStats.team.teamId === '2TXCT2Z972')[0];
+        const online = responses.filter(r => r.teamStats.team.teamId === '3KWRNGFL72')[0];
+        this.setState({
+          abakusPoints: parseInt(abakus.teamStats.statisticsTotals.points, 10),
+          onlinePoints: parseInt(online.teamStats.statisticsTotals.points, 10),
+        });
+      })
+      .catch((err) => {
+        console.error('Failed fetching points', err);
       });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
   }
 
   render() {
