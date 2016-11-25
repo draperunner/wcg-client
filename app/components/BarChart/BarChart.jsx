@@ -20,6 +20,13 @@ const BarChart = (props) => {
 
   const options = {
     responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+        },
+      }],
+    },
   };
 
   return <Bar data={data} options={options} />;
