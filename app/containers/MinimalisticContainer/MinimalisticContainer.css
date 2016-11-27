@@ -1,0 +1,21 @@
+.score-div {
+  display: inline-block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  height: 100%;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+}
+
+.score-div-error {
+  background-color: black;
+  width: 100%;
+  left: 0
+}
+
+.center-div {
+  position: relative;
+  top: 50%;
+}

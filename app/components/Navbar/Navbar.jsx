@@ -6,6 +6,7 @@ const Navbar = () => (
   <div id="navbar">
     <ul>
       <li><Link to="/">Juleutfordringa</Link></li>
+      <li><Link to="/mini">Minimalistisk</Link></li>
       <li><Link to="/total">Total</Link></li>
     </ul>
   </div>);
