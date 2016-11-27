@@ -56,7 +56,7 @@ class MinimalisticContainer extends React.Component {
         </div>);
     }
 
-    const abakusWidth = Math.floor((100 * this.state.scores[0]) / sum);
+    const abakusWidth = Math.round((100 * this.state.scores[0]) / sum);
     const onlineWidth = 100 - abakusWidth;
 
     const abakusStyle = {
