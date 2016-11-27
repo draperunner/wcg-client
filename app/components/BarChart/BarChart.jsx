@@ -24,6 +24,8 @@ const BarChart = (props) => {
       yAxes: [{
         ticks: {
           beginAtZero: true,
+          // Format y values. Add space for each thousand. Example: 45000000 -> 45 000 000
+          callback: value => value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '),
         },
       }],
     },
