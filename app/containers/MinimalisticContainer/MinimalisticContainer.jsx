@@ -5,7 +5,7 @@ class MinimalisticContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      scores: [0, 0],
+      scores: [-1, -1],
       timeRemainingSeconds: 0,
     };
     this.fetchPoints();
@@ -39,7 +39,16 @@ class MinimalisticContainer extends React.Component {
   render() {
     const sum = this.state.scores[0] + this.state.scores[1];
 
-    if (sum === 0 || this.state.unavailable) {
+    if (sum < 0 && !this.state.unavailable) {
+      return (
+        <div className="score-div score-div-error">
+          <div className="center-div">
+            <h1>Henter poeng...</h1>
+          </div>
+        </div>);
+    }
+
+    if (this.state.unavailable) {
       const minutes = Math.floor(this.state.timeRemainingSeconds / 60);
       const seconds = this.state.timeRemainingSeconds - (minutes * 60);
       const timeRemaining = `${minutes} min ${seconds} s`;
